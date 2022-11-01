@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Qatar 2022 - IBM Watson Studio</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/grupos.js"></script>  
+    <script src="js/efectos.js"></script>  
+  <body>
+    <div>
+      <table style="width: 100%;  margin: 0; padding: 0;">
+        <tr>
+          <td style="align-items: left; width: 25%;"><img src="img/logos/logo_IBM.png" style="height: 80px"></td>
+          <td style="width: 50%;"><img src="img/logos/logo_fifa3.png" style="height: 80px"></td>
+          <td style="align-items: right;width: 25%;"><a href="index.html"><img src="img/fondos/watson.png" style="height: 80px"></a></td>
+      </tr> 
+    </table>
+    </div>
+    <div> &nbsp;</div>
+    <div> </div>
+    <div>
+      <div class="grupo">
+        <table class="tabla">
+          <tbody>
+            <tr>
+              <td class="titulotabla2">GRUPO A</td>
+            </tr>
+            <tr>
+              <td class="fila fila_separadora"> 
+              </td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="qatar"> <img src="img/icons/qatar_ico.gif"
+
+                  alt="">&nbsp; QATAR</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="ecuador"> <img src="img/icons/ecuador_ico.gif"
+
+                  alt="">&nbsp; ECUADOR</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="senegal"> <img src="img/icons/senegal_ico.gif"
+
+                  alt="">&nbsp; SENEGAL</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="paises_bajos"> <img src="img/icons/paises_bajos_ico.gif"
+
+                  alt="">&nbsp; PAISES BAJOS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grupo">
+        <table class="tabla">
+          <tbody>
+            <tr>
+              <td class="titulotabla2">GRUPO B</td>
+            </tr>
+            <tr>
+              <td class="fila fila_separadora"> 
+              </td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="inglaterra"> <img src="img/icons/inglaterra_ico.gif"
+
+                  alt="">&nbsp; INGLATERRA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="iran"> <img src="img/icons/iran_ico.gif"
+
+                  alt="">&nbsp; IRAN</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="estados_unidos"> <img src="img/icons/estados_unidos_ico.gif"
+
+                  alt="">&nbsp; ESTADOS UNIDOS</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="gales"> <img src="img/icons/gales_ico.gif"
+
+                  alt="">&nbsp; GALES</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grupo">
+        <table class="tabla">
+          <tbody>
+            <tr>
+              <td class="titulotabla2">GRUPO C</td>
+            </tr>
+            <tr>
+              <td class="fila fila_separadora"> 
+              </td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="argentina"> <img src="img/icons/argentina_ico.gif"
+
+                  alt="">&nbsp; ARGENTINA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="arabia_saudita"> <img src="img/icons/arabia_saudita_ico.gif"
+
+                  alt="">&nbsp; ARABIA SAUDITA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="mexico"> <img src="img/icons/mexico_ico.gif"
+
+                  alt="">&nbsp; MEXICO</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="polonia"> <img src="img/icons/polonia_ico.gif"
+
+                  alt="">&nbsp; POLONIA</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grupo">
+        <table class="tabla">
+          <tbody>
+            <tr>
+              <td class="titulotabla2">GRUPO D</td>
+            </tr>
+            <tr>
+              <td class="fila fila_separadora"> 
+              </td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="francia"> <img src="img/icons/francia_ico.gif"
+
+                  alt="">&nbsp; FRANCIA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="australia"> <img src="img/icons/australia_ico.gif"
+
+                  alt="">&nbsp; AUSTRALIA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="dinamarca"> <img src="img/icons/dinamarca_ico.gif"
+
+                  alt="">&nbsp; DINAMARCA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="tunez"> <img src="img/icons/tunez_ico.gif"
+
+                  alt="">&nbsp; TUNEZ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grupo">
+        <table class="tabla">
+          <tbody>
+            <tr>
+              <td class="titulotabla2">GRUPO E</td>
+            </tr>
+            <tr>
+              <td class="fila fila_separadora"> 
+              </td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="españa"> <img src="img/icons/espana_ico.gif"
+
+                  alt="">&nbsp; ESPAÑA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="costa_rica"> <img src="img/icons/costa_rica_ico.gif"
+
+                  alt="">&nbsp; COSTA RICA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="alemania"> <img src="img/icons/alemania_ico.gif"
+
+                  alt="">&nbsp; ALEMANIA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="japon"> <img src="img/icons/japon_ico.gif"
+
+                  alt="">&nbsp; JAPON</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grupo">
+        <table class="tabla">
+          <tbody>
+            <tr>
+              <td class="titulotabla2">GRUPO F</td>
+            </tr>
+            <tr>
+              <td class="fila fila_separadora"> 
+              </td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="belgica"> <img src="img/icons/belgica_ico.gif"
+
+                  alt="">&nbsp; BELGICA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="canada"> <img src="img/icons/canada_ico.gif"
+
+                  alt="">&nbsp; CANADA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="marruecos"> <img src="img/icons/marruecos_ico.gif"
+
+                  alt="">&nbsp; MARRUECOS</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="croacia"> <img src="img/icons/croacia_ico.gif"
+
+                  alt="">&nbsp; CROACIA</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grupo">
+        <table class="tabla">
+          <tbody>
+            <tr>
+              <td class="titulotabla2">GRUPO G</td>
+            </tr>
+            <tr>
+              <td class="fila fila_separadora"> 
+              </td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="brasil"> <img src="img/icons/brasil_ico.gif"
+
+                  alt="">&nbsp; BRASIL</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="serbia"> <img src="img/icons/serbia_ico.gif"
+
+                  alt="">&nbsp; SERBIA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="suiza"> <img src="img/icons/suiza_ico.gif"
+
+                  alt="">&nbsp; SUIZA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="camerun"> <img src="img/icons/camerun_ico.gif"
+
+                  alt="">&nbsp; CAMERUN</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grupo">
+        <table class="tabla">
+          <tbody>
+            <tr>
+              <td class="titulotabla2">GRUPO H</td>
+            </tr>
+            <tr>
+              <td class="fila fila_separadora"> 
+              </td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="portugal"> <img src="img/icons/portugal_ico.gif"
+
+                  alt="">&nbsp; PORTUGAL</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="ghana"> <img src="img/icons/ghana_ico.gif"
+
+                  alt="">&nbsp; GHANA</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="uruguay"> <img src="img/icons/uruguay_ico.gif"
+
+                  alt="">&nbsp; URUGUAY</td>
+            </tr>
+            <tr>
+              <td class="fila" onmouseover="marcar(this)" onmouseout="desmarcar(this)"
+
+                onclick="seleccion(this);" id="corea_del_sur"> <img src="img/icons/corea_del_sur_ico.gif"
+
+                  alt="">&nbsp; COREA DEL SUR</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div></div>
+    <div style="text-align: center; font-weight: bold; font-family: Vivaldi; color: white;font-size: 38px;">
+      <table style="width: 723px; text-align: left; margin-left: auto; margin-right: auto;border:0">
+        <tbody>
+          <tr>
+            <td rowspan="1" colspan="3">
+              <div style="text-align: center"><img src="img/textos/MSG_seleccion.png" style="height: 63px"></div>
+              
+              <div style="text-align: center; font-weight: bold; font-family: Vivaldi; color: white;font-size: 38px;">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="1" colspan="3">
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: right;" ><img src="img/banderas/png/bandera-vacante.png"
+
+                alt="" style="width: 284px; height: 190px;" class="caja" id="img_equipo1"> </td>
+            <td style="text-align: center;"><i><span style="font-family: SimSun;width: 80%; padding-right:50px" class="text">&nbsp;&nbsp;&nbsp;VS. &nbsp;&nbsp;&nbsp;
+                  </span></i></td>
+            <td style="text-align: left;" ><img src="img/banderas/png/bandera-vacante.png"
+
+                alt="" style="width: 284px; height: 190px;" class="caja" id="img_equipo2"> </td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-family: SimSun; " class="text text-shadow" id="equipo1"><i>EQUIPO 1</i></td>
+            <td style="text-align: center;">
+              <div id="submit_button" hidden>
+                <a onclick="enviar()" class="myButton" id="submit_href" class="text">Predicción de Watson</a>
+              </div>
+            </td>
+            <td style="text-align: center; font-family: SimSun; " class="text text-shadow" id="equipo2">EQUIPO 2</td>
+      
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <form action="prediccion.html" id="form_equipos" method="POST">
+      <input type="text" id="param_equipo1" name="param_equipo1" hidden>
+      <input type="text" id="param_equipo2" name="param_equipo2" hidden>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+#fading {
+    position: relative;
+    height:0px;
+    width: 0px;
+    margin:0 auto;
+  }
+  #fading img {
+    position:absolute;
+    top:0;
+    left:0;
+    -webkit-transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -o-transition: opacity 2s ease-in-out;
+    transition: opacity 2s ease-in-out;
+  }
