@@ -1,3 +1,53 @@
+<?php
+require('conf/config.php');
+require('funcs/funciones.php');
+
+//equipos
+$equipo1 = $_POST['param_equipo1'];
+$equipo2 = $_POST['param_equipo2'];
+
+//planteles
+$img_equipo1 = IMG_EQUIPOS_PATH . $equipo1 . PNG;
+$img_equipo2 = IMG_EQUIPOS_PATH . $equipo2 . PNG;
+
+//nombre equipos
+$uppercase_equipo1 = str_replace('_', ' ', strtoupper($equipo1));
+$uppercase_equipo2 = str_replace('_', ' ', strtoupper($equipo2));
+$nombre_equipos = ['1' => $uppercase_equipo1, '2' => $uppercase_equipo2];
+
+//simulacion API REST
+$empate = rand(0,2);
+$equipo_ganador = rand(1, 2);
+$nombre_ganador = $nombre_equipos[$equipo_ganador]; 
+$msg_resultado = ($empate == 0)? 'EMPATE!!!' : 'VICTORIA DE ' . $nombre_ganador . '!!!';
+$probabilidad = rand(35, 90);
+
+//asignación aleatoria
+$img_estrellas = IMG_ESTRELLAS_PATH . rand(1, MAX_IMG_ESTRELLAS) . PNG;
+$img_copa = IMG_COPAS_PATH . rand(1, MAX_IMG_COPAS) . PNG;
+
+if ($empate == 0) {
+  $img_index1 = rand(1, MAX_IMG_EMPATES);
+  if (MAX_IMG_EMPATES > 1) {
+    do {
+      $img_index2 = rand(1, MAX_IMG_EMPATES);
+    } while ($img_index1 == $img_index2);
+
+  } else $img_index2 = 1; 
+
+  $img_min_equipo1 = IMG_MINIONS_EMPATE . formatear_digitos($img_index1) . GIF;
+  $img_min_equipo2 = IMG_MINIONS_EMPATE . formatear_digitos($img_index2) . GIF;
+
+
+} else {
+  $img_victoria =  IMG_MINIONS_VICTORIA . formatear_digitos(rand(1, MAX_IMG_VICTORIAS)) . GIF; 
+  $img_derrota =  IMG_MINIONS_DERROTA . formatear_digitos(rand(1, MAX_IMG_DERROTAS)) . GIF;
+
+
+  $img_min_equipo1 = ($equipo_ganador == 1) ? $img_victoria : $img_derrota;
+  $img_min_equipo2 = ($equipo_ganador == 2) ? $img_victoria : $img_derrota;
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,6 +57,10 @@
     <link rel="stylesheet" href="css/estilos_pred.css">
     <script src="js/prediccion.js"></script>  
     <script src="js/efectos.js"></script>  
+    <script>
+      const img = document.getElementById("img_equipo2");
+	    img.onload = function() {inicio() }
+    </script>
   </head>
   <body onload="inicio();">
     <div>
@@ -39,9 +93,9 @@
           <tr>
             <td style="text-align: right;" >
               <div id="fading" style="height:200px; width:300px;position:relative;">
-              <img src="img/equipos/equipo_brasil.png"
+              <img src="<?php echo $img_equipo1; ?>"
               alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo1"> 
-              <img src="img/fondos/estrellas2.png"
+              <img src="<?php echo $img_estrellas; ?>"
                 alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo1_top"> 
             </div>
           </td>
@@ -51,47 +105,45 @@
             <td style="text-align: left;" >
               <div id="fading" style="height:200px; width:300px; position: relative;">
 
-              <img src="img/equipos/equipo_serbia.png"
+              <img src="<?php echo $img_equipo2; ?>"
               alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo2"> 
 
-              <img src="img/fondos/copa1.png"
+              <img src="<?php echo $img_copa; ?>"
                 alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo2_top"> </td>
               </div>
 
           </tr>
 
           <tr>
-            <td style="text-align: center; font-family: SimSun;display:none;" class="text" id="nombre_equipo1"><i>BRASIL</i></td>
+            <td style="text-align: center; font-family: SimSun;display:none;" class="text" id="nombre_equipo1"><i><?php echo $uppercase_equipo1;?></i></td>
             <td style="text-align: center;">
               &nbsp;
             </td>
-            <td style="text-align: center; font-family: SimSun;display:none;" class="text" id="nombre_equipo2"><i>SERBIA</i></td>      
+            <td style="text-align: center; font-family: SimSun;display:none;" class="text" id="nombre_equipo2"><i><?php echo $uppercase_equipo2;?></i></td>      
           </tr>
 
           <tr>
             <td>
-              <img src="img/minions/victoria/apaisado/victoria_02.gif"
+              <img src="<?php echo $img_min_equipo1;?>"
                 alt="" style="height: 100px;display:none" class="center" class="caja; hidden_text" id="img_min_equipo1"></td>
                 <td style="text-align: center;">
                   <img src="img/fondos/fifa.png" alt="" style="height: 100px;display:none" id="img_fifa">
                 </td>
-            <td ><img src="img/minions/derrota/apaisado/derrota_02.gif"
+            <td ><img src="<?php echo $img_min_equipo2;?>"
                 alt="" style="height: 100px;display:none" class="center" class="caja " id="img_min_equipo2"> </td>
           </tr>
         </tbody>
       </table>
     </div>
     <div style="text-align:center; color:white;font-size: 18px;display:none" id="texto_titulo">Nuestro modelo predice:</div>
-    <div style="text-align:center; color:white;font-size: 38px;display:none" class="text" id="texto_resultado">VICTORIA DE BRASIL!!!</div>
-    <div style="text-align:center; color:white;font-size: 28px;display:none" class="text" id="texto_probabilidad">Probabilidad: 63%</div>
+    <div style="text-align:center; color:white;font-size: 38px;display:none" class="text" id="texto_resultado"><?php echo $msg_resultado; ?></div>
+    <div style="text-align:center; color:white;font-size: 28px;display:none" class="text" id="texto_probabilidad">Probabilidad: <?php echo $probabilidad.'%';?></div>
     
-    
-    
-    </div>
-    
-    <form action="prediccion.html" id="form_equipos" method="POST">
+    <form id="form_equipos" method="POST">
       <input type="text" id="param_equipo1" name="param_equipo1" value="brasil" hidden>
       <input type="text" id="param_equipo2" name="param_equipo2" value="serbia" hidden>
     </form>
+    
+    </div>
   </body>
 </html>
