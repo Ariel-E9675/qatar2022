@@ -80,7 +80,7 @@ if ($empate == 1) {
         <tr>
           <td style="align-items: left; width: 25%;"><img src="img/logos/logo_IBM.png" style="height: 80px"></td>
           <td style="width: 50%;"><a href="grupos.html"><img src="img/logos/logo_fifa3.png" style="height: 80px"></a></td>
-          <td style="align-items: right;width: 25%;"><a href="index.html"><img src="img/fondos/watson.png" style="height: 80px"></a></td>
+          <td style="align-items: right;width: 25%;"><a href="main.html"><img src="img/fondos/watson.png" style="height: 80px"></a></td>
       </tr> 
     </table>
     </div>

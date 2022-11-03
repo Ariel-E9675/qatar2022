@@ -1,9 +1,11 @@
 <?php
 //request al modelo
 //define('SCORING_URL', 'https://us-south.ml.cloud.ibm.com/ml/v4/deployments/861913e4-25ce-4348-a099-9f4904f6e052/predictions?version=2022-10-31');
-define('SCORING_URL', 'https://us-south.ml.cloud.ibm.com/ml/v4/deployments/match_pred_regression_function/predictions?version=2022-11-02');
+// define('SCORING_URL', 'https://us-south.ml.cloud.ibm.com/ml/v4/deployments/match_pred_regression_function/predictions?version=2022-11-02');
+define('SCORING_URL', 'https://us-south.ml.cloud.ibm.com/ml/v4/deployments/match_pred_multiclasscautoai_fn/predictions?version=2022-11-03');
 define('TOKEN_URL', 'https://iam.cloud.ibm.com/identity/token');
 define('API_KEY', 'eXkKbixdE_4VdLbpi2MgO2Pki0iA7naSPtqTdbwMFUaC');
+define('TOKEN_RENEW_TIME', 3500);
 
 //Cantidad de imágenes
 define('MAX_IMG_ESTRELLAS', 5);
