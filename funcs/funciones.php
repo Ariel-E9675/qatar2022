@@ -135,10 +135,28 @@ function parseResults($json) {
     $x = json_decode($json, true);
     $x = $x['predictions'][0]["values"];
 
-    // print_r($x); exit;
-    $resp['resultado'] = $x[0];
-    $resp['probabilidad'] = round($x[1], 2) * 100;
+    $resp['resultado'][1] = $x[0];
+    $resp['probabilidad'][1] = round($x[1], 2) * 100;
+    $resp['resultado'][2] = $x[2];
+    $resp['probabilidad'][2] = round($x[3], 2) * 100;
+    $resp['resultado'][3] = $x[4];
+    $resp['probabilidad'][3] = round($x[5], 2) * 100;
 
     return $resp;
 }
+
+function getMessages($resp) {
+    for ($i = 1; $i <= 3; $i++) {
+        $nombre_ganador = ucase($resp['resultado'][$i]);
+        $empate = ($nombre_ganador == 'EMPATE');
+        $msg_resultado[$i] = ($empate) ? 'Empate' : 'Victoria de ' . $nombre_ganador;
+
+        if ($i != 1) $msg_resultado[$i] = $msg_resultado[$i] . ': ' . $resp['probabilidad'][$i] . '%';
+    }
+
+    $msg_resultado[1] = strtoupper($msg_resultado[1]) . '!!!';
+    
+    return $msg_resultado;
+}
+
 ?>

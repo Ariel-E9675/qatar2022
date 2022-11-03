@@ -18,5 +18,6 @@ function getResults2($equipo1, $equipo2) {
     }
     return parseResults($resp);
 }
-getResults2('estados_unidos', 'gales');
+// getResults2('estados_unidos', 'gales');
+getResults2('costa_rica', 'canada');
 ?> 

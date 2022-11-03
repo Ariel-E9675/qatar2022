@@ -49,10 +49,18 @@ function animacion() {
     case 6:
         document.getElementById('texto_resultado').style.display = "";
         document.getElementById('texto_probabilidad').style.display = "";
-        delay(1500);
-        pos_resultado();
+        delay(100);
         break;             
     case 7:
+        document.getElementById('texto_extra1').style.display = "";
+        delay(100);
+        break;
+    case 8:
+        document.getElementById('texto_extra2').style.display = "";
+        delay(1500);
+        pos_resultado();
+        break;
+    case 9:
         document.getElementById('img_min_equipo1').style.display = "";
         document.getElementById('img_min_equipo2').style.display = "";
         clearInterval(intervalo);

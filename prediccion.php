@@ -25,14 +25,12 @@ $nro_equipo = [$equipo1 => 1, $equipo2 => 2];
 
 //obtener resultados
 $resp = getResults($equipo1, $equipo2);
-$nombre_ganador = $resp['resultado'];
-// echo $nombre_ganador;exit;
-$empate = ($nombre_ganador == 'empate');
+$nombre_ganador = $resp['resultado'][1];
+$probabilidad = $resp['probabilidad'][1] . '%';
 $nro_equipo_ganador = $nro_equipo[$nombre_ganador];
-$nombre_ganador = ucase($nombre_ganador);
 
-$probabilidad = $resp['probabilidad'];
-$msg_resultado = ($empate)? 'EMPATE!!!' : 'VICTORIA DE ' . $nombre_ganador . '!!!';
+// echo $nombre_ganador;exit;
+$msg_resultado = getMessages($resp);
 
 //asignación aleatoria
 $img_estrellas = IMG_ESTRELLAS_PATH . rand(1, MAX_IMG_ESTRELLAS) . PNG;
@@ -148,9 +146,11 @@ if ($empate == 1) {
       </table>
     </div>
     <div style="text-align:center; color:white;font-size: 18px;display:none" id="texto_titulo">Nuestro modelo predice:</div>
-    <div style="text-align:center; color:white;font-size: 38px;display:none" class="text" id="texto_resultado"><?php echo $msg_resultado; ?></div>
-    <div style="text-align:center; color:white;font-size: 28px;display:none" class="text" id="texto_probabilidad">Probabilidad: <?php echo $probabilidad.'%';?></div>
-    
+    <div style="text-align:center; color:white;font-size: 38px;display:none" class="text" id="texto_resultado"><?php echo $msg_resultado[1]; ?></div>
+    <div style="text-align:center; color:white;font-size: 28px;display:none" class="text" id="texto_probabilidad">Probabilidad: <?php echo $probabilidad;?></div>
+    <div style="text-align:center; color:white;font-size: 19px;display:none;font-style: italic" id="texto_extra1"><?php echo $msg_resultado[2];?></div>
+    <div style="text-align:center; color:white;font-size: 17px;display:none;font-style: italic" id="texto_extra2"><?php echo $msg_resultado[3];?></div>
+
     </div>
   </body>
 </html>
