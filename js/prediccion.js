@@ -43,7 +43,7 @@ function animacion() {
         delay(900);
         break;
     case 5:
-        //playClick();
+        playClick();
         document.getElementById('img_fifa').style.display = "";
         document.getElementById('texto_titulo').style.display = "";
         delay(1300);

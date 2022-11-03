@@ -11,22 +11,34 @@ $img_equipo1 = IMG_EQUIPOS_PATH . $equipo1 . PNG;
 $img_equipo2 = IMG_EQUIPOS_PATH . $equipo2 . PNG;
 
 //nombre equipos
-$uppercase_equipo1 = str_replace('_', ' ', strtoupper($equipo1));
-$uppercase_equipo2 = str_replace('_', ' ', strtoupper($equipo2));
+$uppercase_equipo1 = ucase($equipo1);
+$uppercase_equipo2 = ucase($equipo2);
 $nombre_equipos = ['1' => $uppercase_equipo1, '2' => $uppercase_equipo2];
+$nro_equipo = [$equipo1 => 1, $equipo2 => 2];
 
 //simulacion API REST
-$empate = rand(0,2);
-$equipo_ganador = rand(1, 2);
-$nombre_ganador = $nombre_equipos[$equipo_ganador]; 
-$msg_resultado = ($empate == 0)? 'EMPATE!!!' : 'VICTORIA DE ' . $nombre_ganador . '!!!';
-$probabilidad = rand(35, 90);
+// $empate = rand(0,2);
+// $nro_equipo_ganador = rand(1, 2);
+// $nombre_ganador = $nombre_equipos[$nro_equipo_ganador]; 
+// $msg_resultado = ($empate == 0)? 'EMPATE!!!' : 'VICTORIA DE ' . $nombre_ganador . '!!!';
+// $probabilidad = rand(35, 90);
+
+//obtener resultados
+$resp = getResults($equipo1, $equipo2);
+$nombre_ganador = $resp['resultado'];
+// echo $nombre_ganador;exit;
+$empate = ($nombre_ganador == 'empate');
+$nro_equipo_ganador = $nro_equipo[$nombre_ganador];
+$nombre_ganador = ucase($nombre_ganador);
+
+$probabilidad = $resp['probabilidad'];
+$msg_resultado = ($empate)? 'EMPATE!!!' : 'VICTORIA DE ' . $nombre_ganador . '!!!';
 
 //asignación aleatoria
 $img_estrellas = IMG_ESTRELLAS_PATH . rand(1, MAX_IMG_ESTRELLAS) . PNG;
 $img_copa = IMG_COPAS_PATH . rand(1, MAX_IMG_COPAS) . PNG;
 
-if ($empate == 0) {
+if ($empate == 1) {
   $img_index1 = rand(1, MAX_IMG_EMPATES);
   if (MAX_IMG_EMPATES > 1) {
     do {
@@ -44,8 +56,8 @@ if ($empate == 0) {
   $img_derrota =  IMG_MINIONS_DERROTA . formatear_digitos(rand(1, MAX_IMG_DERROTAS)) . GIF;
 
 
-  $img_min_equipo1 = ($equipo_ganador == 1) ? $img_victoria : $img_derrota;
-  $img_min_equipo2 = ($equipo_ganador == 2) ? $img_victoria : $img_derrota;
+  $img_min_equipo1 = ($nro_equipo_ganador == 1) ? $img_victoria : $img_derrota;
+  $img_min_equipo2 = ($nro_equipo_ganador == 2) ? $img_victoria : $img_derrota;
 }
 ?>
 <!DOCTYPE html>
@@ -99,7 +111,7 @@ if ($empate == 0) {
                 alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo1_top"> 
             </div>
           </td>
-            <td style="text-align: center;font-style: italic;font-family: SimSun; font-size: 36px;" class="text;" id="texto_vs">
+            <td style="text-align: center;font-style: italic;font-size: 36px;" class="text;" id="texto_vs">
                VS. 
             </td>
             <td style="text-align: left;" >
@@ -115,11 +127,11 @@ if ($empate == 0) {
           </tr>
 
           <tr>
-            <td style="text-align: center; font-family: SimSun;display:none;" class="text" id="nombre_equipo1"><i><?php echo $uppercase_equipo1;?></i></td>
+            <td style="text-align: center; display:none;" class="text" id="nombre_equipo1"><i><?php echo $uppercase_equipo1;?></i></td>
             <td style="text-align: center;">
               &nbsp;
             </td>
-            <td style="text-align: center; font-family: SimSun;display:none;" class="text" id="nombre_equipo2"><i><?php echo $uppercase_equipo2;?></i></td>      
+            <td style="text-align: center;display:none;" class="text" id="nombre_equipo2"><i><?php echo $uppercase_equipo2;?></i></td>      
           </tr>
 
           <tr>
