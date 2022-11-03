@@ -15,8 +15,6 @@ function delay(n){
 }
 
 function animacion() {
-  let equipo1 = document.getElementById('param_equipo1').value;
-  let equipo2 = document.getElementById('param_equipo2').value;
   let img_equipo;
 
   switch(step) {

@@ -151,11 +151,6 @@ if ($empate == 1) {
     <div style="text-align:center; color:white;font-size: 38px;display:none" class="text" id="texto_resultado"><?php echo $msg_resultado; ?></div>
     <div style="text-align:center; color:white;font-size: 28px;display:none" class="text" id="texto_probabilidad">Probabilidad: <?php echo $probabilidad.'%';?></div>
     
-    <form id="form_equipos" method="POST">
-      <input type="text" id="param_equipo1" name="param_equipo1" value="brasil" hidden>
-      <input type="text" id="param_equipo2" name="param_equipo2" value="serbia" hidden>
-    </form>
-    
     </div>
   </body>
 </html>
