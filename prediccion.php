@@ -68,8 +68,9 @@ if ($empate == 1) {
     <script src="js/prediccion.js"></script>  
     <script src="js/efectos.js"></script>  
     <script>
-      const img = document.getElementById("img_equipo2");
-	    img.onload = function() {inicio() }
+      const img = document.getElementById("img_equipo1");
+      const img2 = document.getElementById("img_equipo2");
+	    img2.onload = function() {inicio() }
     </script>
   </head>
   <body onload="inicio();">
