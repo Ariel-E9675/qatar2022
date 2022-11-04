@@ -68,9 +68,13 @@ if ($empate == 1) {
     <script src="js/prediccion.js"></script>  
     <script src="js/efectos.js"></script>  
     <script>
-      const img = document.getElementById("img_equipo1");
-      const img2 = document.getElementById("img_equipo2");
-	    img2.onload = function() {inicio() }
+      preloads = "<?php echo $img_estrellas . ',' . $img_copa; ?>".split(",")
+      var tempImg = []
+
+      for(var x=0;x<preloads.length;x++) {
+          tempImg[x] = new Image()
+          tempImg[x].src = preloads[x]
+      }
     </script>
   </head>
   <body onload="inicio();">
@@ -106,6 +110,7 @@ if ($empate == 1) {
               <div id="fading" style="height:200px; width:300px;position:relative;">
               <img src="<?php echo $img_equipo1; ?>"
               alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo1"> 
+              <img src="img/fondos/green_layer.gif" style="width: 300px;height: 190px;" id="layer1"> 
               <img src="<?php echo $img_estrellas; ?>"
                 alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo1_top"> 
             </div>
@@ -118,6 +123,7 @@ if ($empate == 1) {
 
               <img src="<?php echo $img_equipo2; ?>"
               alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo2"> 
+              <img src="img/fondos/green_layer.gif" style="width: 300px;height: 190px;" class="caja" id="layer2"> 
 
               <img src="<?php echo $img_copa; ?>"
                 alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo2_top"> </td>

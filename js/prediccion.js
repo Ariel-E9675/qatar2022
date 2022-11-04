@@ -19,6 +19,8 @@ function animacion() {
 
   switch(step) {
     case 0:
+        document.getElementById('layer1').remove();
+        document.getElementById('layer2').remove();
         document.getElementById('nombre_equipo1').style.display = "";
         delay(50);
         break;
