@@ -5,6 +5,7 @@ require('funcs/funciones.php');
 //equipos
 $equipo1 = $_POST['param_equipo1'];
 $equipo2 = $_POST['param_equipo2'];
+error_log($_SERVER['REMOTE_ADDRESS']."-Equipos:".$equipo1.','.$equipo2);
 
 //planteles
 $img_equipo1 = IMG_EQUIPOS_PATH . $equipo1 . PNG;
@@ -15,13 +16,6 @@ $uppercase_equipo1 = ucase($equipo1);
 $uppercase_equipo2 = ucase($equipo2);
 $nombre_equipos = ['1' => $uppercase_equipo1, '2' => $uppercase_equipo2];
 $nro_equipo = [$equipo1 => 1, $equipo2 => 2];
-
-//simulacion API REST
-// $empate = rand(0,2);
-// $nro_equipo_ganador = rand(1, 2);
-// $nombre_ganador = $nombre_equipos[$nro_equipo_ganador]; 
-// $msg_resultado = ($empate == 0)? 'EMPATE!!!' : 'VICTORIA DE ' . $nombre_ganador . '!!!';
-// $probabilidad = rand(35, 90);
 
 //obtener resultados
 $resp = getResults($equipo1, $equipo2);

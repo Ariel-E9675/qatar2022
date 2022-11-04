@@ -23,4 +23,5 @@ define('IMG_MINIONS_EMPATE', 'img/minions/empate/apaisado/empate_');
 define('IMG_MINIONS_DERROTA', 'img/minions/derrota/apaisado/derrota_');
 define('PNG', '.png');
 define('GIF', '.gif');
+ini_set("log_errors", 1); 
 ?>
