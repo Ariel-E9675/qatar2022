@@ -148,8 +148,8 @@ if ($empate == 1) {
     <div style="text-align:center; color:white;font-size: 18px;display:none" id="texto_titulo">Nuestro modelo predice:</div>
     <div style="text-align:center; color:white;font-size: 38px;display:none" class="text" id="texto_resultado"><?php echo $msg_resultado[1]; ?></div>
     <div style="text-align:center; color:white;font-size: 28px;display:none" class="text" id="texto_probabilidad">Probabilidad: <?php echo $probabilidad;?></div>
-    <div style="text-align:center; color:white;font-size: 19px;display:none;font-style: italic" id="texto_extra1"><?php echo $msg_resultado[2];?></div>
-    <div style="text-align:center; color:white;font-size: 17px;display:none;font-style: italic" id="texto_extra2"><?php echo $msg_resultado[3];?></div>
+    <div style="text-align:center; color:white;font-size: 18px;display:none;font-style: italic" id="texto_extra1"><?php echo $msg_resultado[2];?></div>
+    <div style="text-align:center; color:white;font-size: 16px;display:none;font-style: italic" id="texto_extra2"><?php echo $msg_resultado[3];?></div>
 
     </div>
   </body>
