@@ -76,7 +76,7 @@ if ($empate == 1) {
       <table style="width: 100%;  margin: 0; padding: 0;">
         <tr>
           <td style="align-items: left; width: 25%;"><img src="img/logos/logo_IBM.png" style="height: 80px"></td>
-          <td style="width: 50%;"><a href="grupos.html"><img src="img/logos/logo_fifa3.png" style="height: 80px"></a></td>
+          <td style="width: 50%;"><a href="grupos.html"><img src="img/logos/logo_mundial6.png" style="height: 80px"></a></td>
           <td style="align-items: right;width: 25%;"><a href="main.html"><img src="img/fondos/watson.png" style="height: 80px"></a></td>
       </tr> 
     </table>
@@ -138,7 +138,7 @@ if ($empate == 1) {
               <img src="<?php echo $img_min_equipo1;?>"
                 alt="" style="height: 100px;display:none" class="center" class="caja; hidden_text" id="img_min_equipo1"></td>
                 <td style="text-align: center;">
-                  <img src="img/fondos/fifa.png" alt="" style="height: 100px;display:none" id="img_fifa">
+                  <img src="img/logos/watson_request2.gif" alt="" style="height: 100px;display:none" id="img_fifa">
                 </td>
             <td ><img src="<?php echo $img_min_equipo2;?>"
                 alt="" style="height: 100px;display:none" class="center" class="caja " id="img_min_equipo2"> </td>

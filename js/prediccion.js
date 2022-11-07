@@ -40,29 +40,32 @@ function animacion() {
     case 4:
         img_equipo = document.getElementById('img_equipo2_top');
         img_equipo.style.opacity = 0;
-        delay(900);
+        delay(100);
         break;
     case 5:
-        playClick();
         document.getElementById('img_fifa').style.display = "";
+        delay(6200);
+        break;
+    case 6:
+        playClick();
         document.getElementById('texto_titulo').style.display = "";
         delay(1300);
         break;
-    case 6:
+    case 7:
         document.getElementById('texto_resultado').style.display = "";
         document.getElementById('texto_probabilidad').style.display = "";
         delay(100);
         break;             
-    case 7:
+    case 8:
         document.getElementById('texto_extra1').style.display = "";
         delay(100);
         break;
-    case 8:
+    case 9:
         document.getElementById('texto_extra2').style.display = "";
         delay(1500);
         pos_resultado();
         break;
-    case 9:
+    case 10:
         document.getElementById('img_min_equipo1').style.display = "";
         document.getElementById('img_min_equipo2').style.display = "";
         clearInterval(intervalo);
