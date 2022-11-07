@@ -149,12 +149,12 @@ function getMessages($resp) {
     for ($i = 1; $i <= 3; $i++) {
         $nombre_ganador = ucase($resp['resultado'][$i]);
         $empate = ($nombre_ganador == 'EMPATE');
-        $msg_resultado[$i] = ($empate) ? 'Empate' : 'Victoria de ' . $nombre_ganador;
+        $msg_resultado[$i] = ($empate) ? 'Empate' : '¡Victoria de ' . $nombre_ganador;
 
         if ($i != 1) $msg_resultado[$i] = $msg_resultado[$i] . ': ' . $resp['probabilidad'][$i] . '%';
     }
 
-    $msg_resultado[1] = strtoupper($msg_resultado[1]) . '!!!';
+    $msg_resultado[1] = strtoupper($msg_resultado[1]) . '!';
     
     return $msg_resultado;
 }

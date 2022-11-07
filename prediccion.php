@@ -72,86 +72,42 @@ if ($empate == 1) {
     </script>
   </head>
   <body onload="inicio();">
-    <div>
-      <table style="width: 100%;  margin: 0; padding: 0;">
-        <tr>
-          <td style="align-items: left; width: 25%;"><img src="img/logos/logo_IBM.png" style="height: 80px"></td>
-          <td style="width: 50%;"><a href="grupos.html"><img src="img/logos/logo_fifa3.png" style="height: 80px"></a></td>
-          <td style="align-items: right;width: 25%;"><a href="main.html"><img src="img/fondos/watson.png" style="height: 80px"></a></td>
-      </tr> 
-    </table>
+    <div class="header">
+      <img src="img/logos/logo_fifa3.png" style="height: 80px">
     </div>
-    <div style="width: 100%;height:100%; background-color: #105020;position:absolute;top:100px;">
-    <div> &nbsp;</div>
 
-    <div style="text-align: center; font-weight: bold; color: white;font-size: 38px;">
-
-      <table style="width: 800px; text-align: left; margin-left: auto; margin-right: auto;border:0">
-        <colgroup>
-          <col span="1" style="width: 40%;">
-          <col span="1" style="width: 20%;">
-          <col span="1" style="width: 40%;">
-       </colgroup>
-        <tbody>
-
-          <tr>
-            <td rowspan="1" colspan="3">
-            </td>
-          </tr>
-
-          <tr>
-            <td style="text-align: right;" >
-              <div id="fading" style="height:200px; width:300px;position:relative;">
-              <img src="<?php echo $img_equipo1; ?>"
-              alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo1"> 
-              <img src="img/fondos/green_layer.gif" style="width: 300px;height: 190px;" id="layer1"> 
-              <img src="<?php echo $img_estrellas; ?>"
-                alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo1_top"> 
-            </div>
-          </td>
-            <td style="text-align: center;font-style: italic;font-size: 36px;" class="text;" id="texto_vs">
-               VS. 
-            </td>
-            <td style="text-align: left;" >
-              <div id="fading" style="height:200px; width:300px; position: relative;">
-
-              <img src="<?php echo $img_equipo2; ?>"
-              alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo2"> 
-              <img src="img/fondos/green_layer.gif" style="width: 300px;height: 190px;" class="caja" id="layer2"> 
-
-              <img src="<?php echo $img_copa; ?>"
-                alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo2_top"> </td>
-              </div>
-
-          </tr>
-
-          <tr>
-            <td style="text-align: center; display:none;" class="text" id="nombre_equipo1"><i><?php echo $uppercase_equipo1;?></i></td>
-            <td style="text-align: center;">
-              &nbsp;
-            </td>
-            <td style="text-align: center;display:none;" class="text" id="nombre_equipo2"><i><?php echo $uppercase_equipo2;?></i></td>      
-          </tr>
-
-          <tr>
-            <td>
-              <img src="<?php echo $img_min_equipo1;?>"
-                alt="" style="height: 100px;display:none" class="center" class="caja; hidden_text" id="img_min_equipo1"></td>
-                <td style="text-align: center;">
-                  <img src="img/fondos/fifa.png" alt="" style="height: 100px;display:none" id="img_fifa">
-                </td>
-            <td ><img src="<?php echo $img_min_equipo2;?>"
-                alt="" style="height: 100px;display:none" class="center" class="caja " id="img_min_equipo2"> </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="banderas-boton">
+      <div class="pais">
+        <div id="fading" style="height:200px; width:300px;position:relative;">
+          <img src="<?php echo $img_equipo1; ?>" alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo1"> 
+          <img src="img/fondos/green_layer.gif" style="width: 300px;height: 190px;" id="layer1"> 
+          <img src="<?php echo $img_estrellas; ?>" alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo1_top"> 
+        </div>
+        <span class="elegido" style="text-align: center; display:none;" id="nombre_equipo1"><?php echo $uppercase_equipo1;?></span>
+      </div>
+      <div>
+        <span class="elegido"> vs </span>
+      </div>
+      <div class="pais">
+        <div id="fading" style="height:200px; width:300px; position: relative;">
+          <img src="<?php echo $img_equipo2; ?>" alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo2"> 
+          <img src="img/fondos/green_layer.gif" style="width: 300px;height: 190px;" class="caja" id="layer2"> 
+          <img src="<?php echo $img_copa; ?>" alt="" style="width: 300px;height: 190px;" class="caja" id="img_equipo2_top">
+        </div>
+        <span class="elegido" style="text-align: center;display:none;" id="nombre_equipo2"><?php echo $uppercase_equipo2;?></span>
+      </div>
     </div>
-    <div style="text-align:center; color:white;font-size: 18px;display:none" id="texto_titulo">Nuestro modelo predice:</div>
-    <div style="text-align:center; color:white;font-size: 38px;display:none" class="text" id="texto_resultado"><?php echo $msg_resultado[1]; ?></div>
-    <div style="text-align:center; color:white;font-size: 28px;display:none" class="text" id="texto_probabilidad">Probabilidad: <?php echo $probabilidad;?></div>
-    <div style="text-align:center; color:white;font-size: 18px;display:none;font-style: italic" id="texto_extra1"><?php echo $msg_resultado[2];?></div>
-    <div style="text-align:center; color:white;font-size: 16px;display:none;font-style: italic" id="texto_extra2"><?php echo $msg_resultado[3];?></div>
+    
+    <div class="resultados">
+      <div style="text-align:center; color:white;font-size: 24px; display:none" id="texto_titulo">Nuestro modelo predice:</div>
+      <div style="text-align:center; color:white;font-size: 34px; display:none; font-style: bold" id="texto_resultado"><?php echo $msg_resultado[1]; ?></div>
+      <div style="text-align:center; color:white;font-size: 24px; display:none; font-style: italic" id="texto_probabilidad">Probabilidad: <?php echo $probabilidad;?></div>
+      <div style="text-align:center; color:white;font-size: 18px; display:none;" id="texto_extra1"><?php echo $msg_resultado[2];?></div>
+      <div style="text-align:center; color:white;font-size: 18px; display:none;" id="texto_extra2"><?php echo $msg_resultado[3];?></div>
+    </div>
 
+    <div class="footer">
+      <img onclick="toggleMusic()" src="img/logos/rebus-light-small.png" style="height: 60px">
     </div>
   </body>
 </html>

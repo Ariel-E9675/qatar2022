@@ -5,20 +5,19 @@
     <title>Qatar 2022 - IBM Watson Studio</title>
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/grupos.js"></script>  
-    <script src="js/efectos.js"></script>  
+    <script src="js/efectos.js"></script>
+  </head>  
   <body>
-    <div>
-      <table style="width: 100%;  margin: 0; padding: 0;">
-        <tr>
-          <td style="align-items: left; width: 25%;"><img src="img/logos/logo_IBM.png" style="height: 80px"></td>
-          <td style="width: 50%;"><img src="img/logos/logo_fifa3.png" style="height: 80px"></td>
-          <td style="align-items: right;width: 25%;"><a href="main.html"><img src="img/fondos/watson.png" style="height: 80px"></a></td>
-      </tr> 
-    </table>
+    <div class="header">
+      <img src="img/logos/logo_fifa3.png" style="height: 80px">
     </div>
-    <div> &nbsp;</div>
-    <div> </div>
-    <div>
+    
+    <!-- <div class="sub">
+      <h3> Seleccioná los equipos del partido que querés predecir: </h3>
+    </div> -->
+
+    <div class="tabla-todos">
+    <div class="equipos">
       <div class="grupo">
         <table class="tabla">
           <tbody>
@@ -183,6 +182,8 @@
           </tbody>
         </table>
       </div>
+    </div>
+    <div class="equipos">
       <div class="grupo">
         <table class="tabla">
           <tbody>
@@ -348,48 +349,30 @@
         </table>
       </div>
     </div>
-    <div></div>
-    <div style="text-align: center; font-weight: bold; font-family: Vivaldi; color: white;font-size: 38px;">
-      <table style="width: 723px; text-align: left; margin-left: auto; margin-right: auto;border:0">
-        <tbody>
-          <tr>
-            <td rowspan="1" colspan="3">
-              <div style="text-align: center"><img src="img/textos/MSG_seleccion.png" style="height: 63px"></div>
-              
-              <div style="text-align: center; font-weight: bold; font-family: Vivaldi; color: white;font-size: 38px;">
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="1" colspan="3">
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: right;" ><img src="img/banderas/png/bandera-vacante.png"
-
-                alt="" style="width: 284px; height: 190px;" class="caja" id="img_equipo1"> </td>
-            <td style="text-align: center;"><i><span style="width: 80%; padding-right:50px" class="text">&nbsp;&nbsp;&nbsp;VS. &nbsp;&nbsp;&nbsp;
-                  </span></i></td>
-            <td style="text-align: left;" ><img src="img/banderas/png/bandera-vacante.png"
-
-                alt="" style="width: 284px; height: 190px;" class="caja" id="img_equipo2"> </td>
-          </tr>
-          <tr>
-            <td style="text-align: center;" class="text text-shadow" id="equipo1"><i>EQUIPO 1</i></td>
-            <td style="text-align: center;">
-              <div id="submit_button" hidden>
-                <a onclick="enviar()" class="myButton" id="submit_href" class="text">Predicción de Watson</a>
-              </div>
-            </td>
-            <td style="text-align: center;" class="text text-shadow" id="equipo2">EQUIPO 2</td>
-      
-          </tr>
-        </tbody>
-      </table>
     </div>
-    <form action="prediccion.php" id="form_equipos" method="POST">
+
+    <div class="banderas-boton">
+      <div class="pais">
+        <img src="img/banderas/png/bandera-vacante.png" alt="" style="width: 254px; height: 160px;" class="caja" id="img_equipo1">
+        <span class="elegido" id="equipo1">EQUIPO 1</span>
+      </div>
+      <div id="submit_button">
+          <a onclick="enviar()" class="myButton" id="submit_href">¡Predecí con Watson!</a>
+      </div>
+      <div class="pais">
+        <img src="img/banderas/png/bandera-vacante.png" alt="" style="width: 254px; height: 160px;" class="caja" id="img_equipo2">
+        <span class="elegido winner" id="equipo2">EQUIPO 2</span>
+      </div>
+    </div>
+    
+    <form class="form" action="prediccion.php" id="form_equipos" method="POST">
       <input type="text" id="param_equipo1" name="param_equipo1" hidden>
       <input type="text" id="param_equipo2" name="param_equipo2" hidden>
     </form>
+
+    <div class="footer">
+      <img onclick="toggleMusic()" src="img/logos/rebus-light-small.png" style="height: 60px">
+    </div>
+
   </body>
 </html>
